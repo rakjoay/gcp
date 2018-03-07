@@ -1,5 +1,5 @@
 provider "google" {
-  credentials = "${file("./secrets/myFirstProject-9b6e4b094f95.json")}"
+  credentials = "${file("/usr/local/Cellar/terraform/0.11.3/Terra/gcp-kube/gcp/terraform-test-env.json")}"
   project     = "${var.gce_project}"
   region      = "${var.gce_region}"
 }
@@ -23,10 +23,10 @@ resource "google_container_cluster" "k8scluster" {
   zone               = "${var.gce_region}-a"
   initial_node_count = 1
 
-  //additional_zones = [
-  //  "${var.gce_region}-b",
-  //  "${var.gce_region}-c",
-  //]
+  additional_zones = [
+  "${var.gce_region}-b",
+  "${var.gce_region}-c",
+  ]
 
   master_auth {
     username = "${var.kubernetes_username}"

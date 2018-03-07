@@ -3,4 +3,4 @@ terraform.tfstate.backup
 .terraform
 outputs.tf
 dbtest
-secrets/myFirstProject-9b6e4b094f95.json
+/usr/local/Cellar/terraform/0.11.3/Terra/gcp-kube/gcp/terraform-test-env.json

@@ -4,7 +4,7 @@ Set the below ENV variables.
 
 	env variable GOOGLE_APPLICATION_CREDENTIALS points to the path where credentials file is stored.
 
-	export GOOGLE_APPLICATION_CREDENTIALS=/Users/anandk/Anand/Self/demo/gcloud/01Rajesh/secrets/myFirstProject-9b6e4b094f95.json
+	export GOOGLE_APPLICATION_CREDENTIALS=/usr/local/Cellar/terraform/0.11.3/Terra/gcp-kube/gcp/terraform-test-env.json
 
 	export TF_VAR_env=demoenv3
 	export TF_VAR_gce_project=radiant-cycle-196820

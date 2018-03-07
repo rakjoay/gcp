@@ -21,10 +21,10 @@ resource "google_container_cluster" "k8scluster" {
   name               = "${var.env}-kubernetes-cluster"
   zone               = "${var.gce_region}-a"
 
-  //additional_zones = [
-  //  "${var.gce_region}-b",
-  //  "${var.gce_region}-c",
-  //]
+  additional_zones = [
+  "${var.gce_region}-b",
+  "${var.gce_region}-c",
+  ]
 
   master_auth {
     username = "${var.kubernetes_username}"

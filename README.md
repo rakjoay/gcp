@@ -4,15 +4,15 @@ Set the below ENV variables.
 
 	env variable GOOGLE_APPLICATION_CREDENTIALS points to the path where credentials file is stored.
 
-	export GOOGLE_APPLICATION_CREDENTIALS=/Users/anandk/Anand/Self/demo/gcloud/01Rajesh/secrets/myFirstProject-9b6e4b094f95.json
+	export GOOGLE_APPLICATION_CREDENTIALS=/usr/local/Cellar/terraform/0.11.3/Terra/gcp-kube/gcp/terraform-test-env.json
 
 	export TF_VAR_env=demoenv5
 	export TF_VAR_gce_project=radiant-cycle-196820
 	export TF_VAR_gce_region=us-central1
 	export TF_VAR_vpc_name=testvpc
 	export TF_VAR_vpc_cidr=10.0.0.0/16
-	export TF_VAR_dbusername=anand
-	export TF_VAR_dbpassword=anand
+	export TF_VAR_dbusername=rakesh
+	export TF_VAR_dbpassword=rakesh
 	export TF_VAR_dbhost=%
 	export TF_VAR_dbsize=db-n1-standard-1
 	export TF_VAR_db_disk_size=20
@@ -72,6 +72,3 @@ Important points:
 
 	- modify the variable TF_VAR_dbhost to your ip or any other desired value. currently it is set to % which gives it global access.
 
-
-
-https://github.com/terraform-providers/terraform-provider-google/issues/773

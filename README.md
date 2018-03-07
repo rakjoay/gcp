@@ -11,13 +11,13 @@ Set the below ENV variables.
 	export TF_VAR_gce_region=us-central1
 	export TF_VAR_vpc_name=testvpc
 	export TF_VAR_vpc_cidr=10.0.0.0/16
-	export TF_VAR_dbusername=anand
-	export TF_VAR_dbpassword=anand
+	export TF_VAR_dbusername=rakesh
+	export TF_VAR_dbpassword=rakesh
 	export TF_VAR_dbhost=%
 	export TF_VAR_dbsize=db-n1-standard-1
 	export TF_VAR_dbversion=MYSQL_5_7
-	export TF_VAR_kubernetes_username=anand
-	export TF_VAR_kubernetes_password=anandanandanandanand
+	export TF_VAR_kubernetes_username=rakesh
+	export TF_VAR_kubernetes_password=rakeshkumarrakeshtest
 	export TF_VAR_topic=publisher
 	export TF_VAR_subscription=subscriber
 

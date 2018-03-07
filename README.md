@@ -6,7 +6,7 @@ Set the below ENV variables.
 
 	export GOOGLE_APPLICATION_CREDENTIALS=/Users/anandk/Anand/Self/demo/gcloud/01Rajesh/secrets/myFirstProject-9b6e4b094f95.json
 
-	export TF_VAR_env=demoenv3
+	export TF_VAR_env=demoenv5
 	export TF_VAR_gce_project=radiant-cycle-196820
 	export TF_VAR_gce_region=us-central1
 	export TF_VAR_vpc_name=testvpc
@@ -15,11 +15,20 @@ Set the below ENV variables.
 	export TF_VAR_dbpassword=anand
 	export TF_VAR_dbhost=%
 	export TF_VAR_dbsize=db-n1-standard-1
+	export TF_VAR_db_disk_size=20
 	export TF_VAR_dbversion=MYSQL_5_7
 	export TF_VAR_kubernetes_username=anand
 	export TF_VAR_kubernetes_password=anandanandanandanand
+	export TF_VAR_node_image=ubuntu
+	export TF_VAR_node_machine_type=n1-standard-1
+	export TF_VAR_node_disk_size_gb=20
+	export TF_VAR_initial_node_eachzone=1
+	export TF_VAR_min_node_count=1
+	export TF_VAR_max_node_count=3
 	export TF_VAR_topic=publisher
 	export TF_VAR_subscription=subscriber
+	
+
 
 	Note: variable "TF_VAR_env" governs the names of the resources created for that particular env. Modify it to appropriate name for creation of new envs
 
@@ -59,5 +68,10 @@ Important points:
 		Issue on github
 		https://github.com/terraform-providers/terraform-provider-google/issues/1146
 
+	- If you want SSL over db it is a manual process once the db is created. Google cloud doesnt support ssl option before db instance is compltely created.
+
 	- modify the variable TF_VAR_dbhost to your ip or any other desired value. currently it is set to % which gives it global access.
 
+
+
+https://github.com/terraform-providers/terraform-provider-google/issues/773

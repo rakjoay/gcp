@@ -15,6 +15,7 @@ variable "node_image" {}
 variable "topic" {}
 variable "subscription" {}
 variable "node_machine_type" {}
+variable "node_disk_size_gb" {}
 variable "min_node_count" {}
 variable "max_node_count" {}
 variable "initial_node_eachzone" {}

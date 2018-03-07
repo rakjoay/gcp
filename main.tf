@@ -1,5 +1,4 @@
 provider "google" {
-  credentials = "${file("./secrets/myFirstProject-9b6e4b094f95.json")}"
   project     = "${var.gce_project}"
   region      = "${var.gce_region}"
 }
@@ -21,7 +20,6 @@ resource "google_compute_subnetwork" "newsubnet" {
 resource "google_container_cluster" "k8scluster" {
   name               = "${var.env}-kubernetes-cluster"
   zone               = "${var.gce_region}-a"
-  initial_node_count = 1
 
   //additional_zones = [
   //  "${var.gce_region}-b",
@@ -36,7 +34,23 @@ resource "google_container_cluster" "k8scluster" {
   network = "${google_compute_network.newvpc.self_link}"
   subnetwork = "${google_compute_subnetwork.newsubnet.name}"
 
+  node_pool = [{
+    name = "default-pool"
+    node_count= 0
+  }]
+
+}
+
+resource "google_container_node_pool" "np" {
+  name               = "k8s-node-pool"
+  zone               = "${var.gce_region}-a"
+  cluster            = "${google_container_cluster.k8scluster.name}"
+  node_count         = "${var.initial_node_eachzone}"
+
   node_config {
+    image_type    = "${var.node_image}"
+    machine_type  = "${var.node_machine_type}"
+    disk_size_gb  = "${var.node_disk_size_gb}"
     oauth_scopes = [
       "https://www.googleapis.com/auth/compute",
       "https://www.googleapis.com/auth/devstorage.read_only",
@@ -50,7 +64,14 @@ resource "google_container_cluster" "k8scluster" {
 
     tags = ["networktag1", "networktag2"]
   }
+
+  autoscaling {
+    min_node_count   = "${var.min_node_count}"
+    max_node_count   = "${var.max_node_count}"
+  }
+
 }
+
 
 resource "google_sql_database_instance" "master" {
   region      = "${var.gce_region}"
@@ -58,6 +79,10 @@ resource "google_sql_database_instance" "master" {
   database_version = "${var.dbversion}"
   settings {
     tier = "${var.dbsize}"
+    disk_size = "${var.db_disk_size}"
+    backup_configuration {
+      enabled = true
+    }
   }
 }
 

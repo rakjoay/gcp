@@ -1,0 +1,14 @@
+variable "gce_project" {}
+variable "gce_region" {}
+variable "vpc_name" {}
+variable "vpc_cidr" {}
+variable "env" {}
+variable "dbusername" {}
+variable "dbpassword" {}
+variable "dbhost" {}
+variable "dbsize" {}
+variable "dbversion" {}
+variable "kubernetes_username" {}
+variable "kubernetes_password" {}
+variable "topic" {}
+variable "subscription" {}

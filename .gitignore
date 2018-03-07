@@ -1,0 +1,6 @@
+terraform.tfstate
+terraform.tfstate.backup
+.terraform
+outputs.tf
+dbtest
+secrets/myFirstProject-9b6e4b094f95.json

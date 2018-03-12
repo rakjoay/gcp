@@ -17,8 +17,8 @@ Set the below ENV variables.
 	export TF_VAR_dbsize=db-n1-standard-1
 	export TF_VAR_db_disk_size=20
 	export TF_VAR_dbversion=MYSQL_5_7
-	export TF_VAR_kubernetes_username=anand
-	export TF_VAR_kubernetes_password=anandanandanandanand
+	export TF_VAR_kubernetes_username=rakesh
+	export TF_VAR_kubernetes_password=rakeshkumarrakeshkumar
 	export TF_VAR_node_image=ubuntu
 	export TF_VAR_node_machine_type=n1-standard-1
 	export TF_VAR_node_disk_size_gb=20
